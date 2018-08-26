@@ -34,5 +34,6 @@ def used():
     tokens['used'].append(token)
     return('Success')
 
-
-Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc')).start()
+if __name__ == "__main__":
+    app.run()
+    #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc')).start()
