@@ -15,7 +15,7 @@ def tokenremoval(token):
     tokens['tokens'].remove(token)
 
     
-@app.route("/")
+@app.route("/main", methods=['GET'])
 def main():
     return render_template('index.html')
 
