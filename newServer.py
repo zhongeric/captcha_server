@@ -14,6 +14,11 @@ def tokenremoval(token):
     time.sleep(110)
     tokens['tokens'].remove(token)
 
+    
+@app.route("/")
+def main():
+    return render_template('index.html')
+
 @app.route('/json', methods=['GET'])
 def json():
     content = tokens
