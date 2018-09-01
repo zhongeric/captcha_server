@@ -29,9 +29,9 @@ def success():
         product = request.form.get('product-title', '')
         string_formatted = 'Product Success ' + str(product) + ' [' + str(timestamp) + ']'
         success_list.append(string_formatted)
-        return(success_list)
+        #return(success_list)
     if request.method == "GET":
-        return(success_list)
+        return(str(success_list))
 
 @app.route('/json', methods=['GET'])
 def json():
