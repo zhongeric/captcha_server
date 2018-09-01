@@ -24,7 +24,7 @@ def main():
 @app.route("/success", methods=['GET','POST'])
 def success():
     if request.method == "POST":
-        counter ++ 1
+        #counter + 1
         timestamp = request.form.get('timestamp', '')
         product = request.form.get('product-title', '')
         string_formatted = 'Product Success ' + str(product) + ' [' + str(timestamp) + ']'
