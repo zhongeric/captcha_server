@@ -54,5 +54,5 @@ def used():
     return('Success')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, port=3134)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
