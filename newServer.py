@@ -31,7 +31,7 @@ def success():
         success.append(string_formatted)
         return(success)
     if request.method == "GET":
-        return(render_template('json.html', content = success))
+        return(render_template('success.html', content = success))
 
 @app.route('/json', methods=['GET'])
 def json():
