@@ -24,6 +24,10 @@ def main():
 def success():
     if request.method == "POST":
         counter = counter + 1
+        timestamp = request.form.get('timestamp', '')
+        product = request.form.get('product-title', '')
+        string-formatted = 'Product Success ' + product + ' [' + timestamp + ']'
+    return(string-formatted)
 
 @app.route('/json', methods=['GET'])
 def json():
