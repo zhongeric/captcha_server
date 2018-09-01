@@ -6,7 +6,7 @@ import logging, time, sys
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
 tokens = {'tokens':[],'used':[]}
-success = []
+success_list = []
 counter = 0
 
 app = Flask(__name__)
@@ -28,10 +28,10 @@ def success():
         timestamp = request.form.get('timestamp', '')
         product = request.form.get('product-title', '')
         string_formatted = 'Product Success ' + str(product) + ' [' + str(timestamp) + ']'
-        success.append(string_formatted)
-        return(success)
+        success_list.append(string_formatted)
+        return(success_list)
     if request.method == "GET":
-        return(str(success))
+        return(success_list)
 
 @app.route('/json', methods=['GET'])
 def json():
