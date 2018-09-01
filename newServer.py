@@ -26,7 +26,7 @@ def success():
         counter = counter + 1
         timestamp = request.form.get('timestamp', '')
         product = request.form.get('product-title', '')
-        string-formatted = 'Product Success ' + product + ' [' + timestamp + ']'
+        string-formatted = 'Product Success ' + str(product) + ' [' + str(timestamp) + ']'
     return(string-formatted)
 
 @app.route('/json', methods=['GET'])
