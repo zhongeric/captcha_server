@@ -8,6 +8,7 @@ logging.getLogger('werkzeug').setLevel(logging.ERROR)
 tokens = {'tokens':[],'used':[]}
 
 app = Flask(__name__)
+counter = 0
 
 def tokenremoval(token):
     tokens['tokens'].append(token)
@@ -18,6 +19,11 @@ def tokenremoval(token):
 @app.route("/", methods=['GET'])
 def main():
     return render_template('main.html')
+
+@app.route("/success", methods=['GET','POST'])
+def success():
+    if request.method == "POST":
+        counter = counter + 1
 
 @app.route('/json', methods=['GET'])
 def json():
