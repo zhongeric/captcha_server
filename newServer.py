@@ -12,7 +12,12 @@ tokens = {'tokens':[],'used':[]}
 success_list = []
 counter = 0
 domain = "http://www.supremenewyork.com/"
-chrome = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(chrome_options=chrome_options)
+#chrome = webdriver.Chrome()
 htmlcode = """
 <html>
    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
@@ -49,9 +54,9 @@ def tokenremoval(token):
 
 @app.route("/supreme", methods=['GET'])
 def supreme():
-    chrome.get(domain)
+    driver.get(domain)
     try:
-        chrome.execute_script('document.write("{}")'.format(htmlcode))
+        drive.execute_script('document.write("{}")'.format(htmlcode))
     except selenium.common.exceptions.WebDriverException:
         pass
     
