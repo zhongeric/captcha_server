@@ -52,7 +52,7 @@ def supreme():
 #     except selenium.common.exceptions.WebDriverException:
 #         pass
 
-@app.route("/now", methods['GET'])
+@app.route("/now", methods=['GET'])
 def now():
    return render_template('main.html')
     
