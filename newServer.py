@@ -2,9 +2,6 @@ from flask import Flask, render_template, request
 from threading import Thread
 from sys import argv
 import logging, time, sys
-from selenium import webdriver
-import time, getpass, selenium
-from selenium.webdriver.chrome.options import Options
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
@@ -12,12 +9,6 @@ tokens = {'tokens':[],'used':[]}
 success_list = []
 counter = 0
 domain = "http://www.supremenewyork.com/"
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(chrome_options=chrome_options)
-#chrome = webdriver.Chrome()
 htmlcode = """
 <html>
    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
@@ -54,11 +45,12 @@ def tokenremoval(token):
 
 @app.route("/supreme", methods=['GET'])
 def supreme():
-    driver.get(domain)
-    try:
-        drive.execute_script('document.write("{}")'.format(htmlcode))
-    except selenium.common.exceptions.WebDriverException:
-        pass
+   return redirect("http://www.supremenewyork.com", code=200)
+#     driver.get(domain)
+#     try:
+#         drive.execute_script('document.write("{}")'.format(htmlcode))
+#     except selenium.common.exceptions.WebDriverException:
+#         pass
     
 @app.route("/", methods=['GET'])
 def main():
