@@ -11,6 +11,8 @@ logging.getLogger('werkzeug').setLevel(logging.ERROR)
 tokens = {'tokens':[],'used':[]}
 success_list = []
 counter = 0
+domain = "http://www.supremenewyork.com/"
+chrome = webdriver.Chrome()
 htmlcode = """
 <html>
    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
@@ -47,9 +49,9 @@ def tokenremoval(token):
 
 @app.route("/supreme", methods=['GET'])
 def supreme():
-    self.chrome.get(self.domain)
+    chrome.get(domain)
     try:
-        self.chrome.execute_script('document.write("{}")'.format(htmlcode))
+        chrome.execute_script('document.write("{}")'.format(htmlcode))
     except selenium.common.exceptions.WebDriverException:
         pass
     
