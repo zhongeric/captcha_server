@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from threading import Thread
 from sys import argv
 import logging, time, sys
