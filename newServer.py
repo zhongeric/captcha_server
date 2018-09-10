@@ -51,6 +51,10 @@ def supreme():
 #         drive.execute_script('document.write("{}")'.format(htmlcode))
 #     except selenium.common.exceptions.WebDriverException:
 #         pass
+
+@app.route("/now", methods['GET'])
+def now():
+   return render_template('main.html')
     
 @app.route("/", methods=['GET'])
 def main():
