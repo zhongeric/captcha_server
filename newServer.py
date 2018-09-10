@@ -45,7 +45,7 @@ def tokenremoval(token):
 
 @app.route("/supreme", methods=['GET'])
 def supreme():
-   return redirect("http://www.supremenewyork.com", code=200)
+   return redirect("http://www.supremenewyork.com", code=302)
 #     driver.get(domain)
 #     try:
 #         drive.execute_script('document.write("{}")'.format(htmlcode))
