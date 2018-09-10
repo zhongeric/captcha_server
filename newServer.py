@@ -11,7 +11,8 @@ logging.getLogger('werkzeug').setLevel(logging.ERROR)
 tokens = {'tokens':[],'used':[]}
 success_list = []
 counter = 0
-htmlcode = "<html>
+htmlcode = """
+<html>
    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
    <head>
       <script type='text/javascript' src='https://www.google.com/recaptcha/api.js'></script><script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script> 
@@ -34,7 +35,8 @@ htmlcode = "<html>
       </center>
       <script>function sub(){document.getElementById('submit').click();}</script> 
    </body>
-</html>"
+</html>
+"""
 
 app = Flask(__name__)
 
