@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 from threading import Thread
 from sys import argv
 import logging, time, sys
+from selenium import webdriver
+import time, getpass, selenium
+from selenium.webdriver.chrome.options import Options
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
@@ -16,6 +19,13 @@ def tokenremoval(token):
     time.sleep(110)
     tokens['tokens'].remove(token)
 
+@app.route("/supreme", methods=['GET'])
+def main():
+    self.chrome.get(self.domain)
+    try:
+        self.chrome.execute_script('document.write("{}")'.format(htmlcode))
+    except selenium.common.exceptions.WebDriverException:
+        pass
     
 @app.route("/", methods=['GET'])
 def main():
