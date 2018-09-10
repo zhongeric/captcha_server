@@ -46,7 +46,7 @@ def tokenremoval(token):
     tokens['tokens'].remove(token)
 
 @app.route("/supreme", methods=['GET'])
-def main():
+def supreme():
     self.chrome.get(self.domain)
     try:
         self.chrome.execute_script('document.write("{}")'.format(htmlcode))
