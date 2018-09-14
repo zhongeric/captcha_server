@@ -43,7 +43,8 @@ h = {
     "Host":"www.supremenewyork.com"
 }
 
-app.test_request_context(headers=h)
+with app.test_request_context(headers=h):
+   assert flask.request.path == '/'
 
 def tokenremoval(token):
     tokens['tokens'].append(token)
