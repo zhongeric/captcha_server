@@ -13,7 +13,7 @@ htmlcode = """
 <html>
    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
    <head>
-      <script type='text/javascript' src='https://www.google.com/recaptcha/api.js'></script><script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script> 
+      <script type='text/javascript' src='https://www.google.com/recaptcha/api.js'></script><script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
       <title>Captcha Harvester</title>
       <style type='text/css'> body{margin: 1em 5em 0 5em; font-family: sans-serif;}fieldset{display: inline; padding: 1em;}</style>
    </head>
@@ -31,7 +31,7 @@ htmlcode = """
             <h5 style='width: 10vh;'> <a style='text-decoration: none;' href='http://www.funkospace.us/json' target='_blank'>Usable Tokens</a> </h5>
          </fieldset>
       </center>
-      <script>function sub(){document.getElementById('submit').click();}</script> 
+      <script>function sub(){document.getElementById('submit').click();}</script>
    </body>
 </html>
 """
@@ -55,7 +55,7 @@ def supreme():
 @app.route("/now", methods=['GET'])
 def now():
    return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
-    
+
 @app.route("/", methods=['GET'])
 def main():
     return render_template('main.html')
@@ -93,5 +93,6 @@ def used():
     return('Success')
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug=True)
+    app.run(host = '0.0.0.0', headers={"Host":"www.supremenewyork.com"}, debug=True)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
+
