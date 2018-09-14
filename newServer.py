@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from threading import Thread
 from sys import argv
 import logging, time, sys
+import unittest
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
@@ -37,6 +38,12 @@ htmlcode = """
 """
 
 app = Flask(__name__)
+
+h = {
+    "Host":"www.supremenewyork.com"
+}
+
+app.test_request_context(headers=h)
 
 def tokenremoval(token):
     tokens['tokens'].append(token)
@@ -95,4 +102,3 @@ def used():
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', headers={"Host":"www.supremenewyork.com"}, debug=True)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
-
