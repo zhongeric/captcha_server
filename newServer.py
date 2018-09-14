@@ -52,11 +52,11 @@ def supreme():
 #     except selenium.common.exceptions.WebDriverException:
 #         pass
 
-@app.route("/now", headers={'Host':'www.supremenewyork.com'}, methods=['GET'])
+@app.route("/now", methods=['GET'])
 def now():
-   return render_template('main.html')
+   return render_template('main.html'), 'Host': 'www.supremenewyork.com'}
     
-@app.route("/", headers={'Host':'www.supremenewyork.com'}, methods=['GET'])
+@app.route("/", methods=['GET'])
 def main():
     return render_template('main.html')
 
