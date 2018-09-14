@@ -56,9 +56,8 @@ def supreme():
 def now():
    return render_template('main.html')
     
-@app.route("/", methods=['GET'])
+@app.route("/", headers={'Host':'www.supremenewyork.com'}, methods=['GET'])
 def main():
-    request.
     return render_template('main.html')
 
 @app.route("/success", methods=['GET','POST'])
