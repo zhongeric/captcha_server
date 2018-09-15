@@ -61,7 +61,7 @@ def supreme():
 def now():
     with app.test_request_context(headers=h):
         assert request.headers["Host"] == "http://www.supremenewyork.com"
-   return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
+   return render_template('main.html')
 
 @app.route("/", methods=['GET'])
 def main():
