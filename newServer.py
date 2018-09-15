@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, middleware
+from flask import Flask, render_template, request, redirect
 from threading import Thread
 from sys import argv
 import logging, time, sys
 import unittest
+import middleware
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
