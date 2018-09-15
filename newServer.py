@@ -61,7 +61,7 @@ def supreme():
 def now():
     with app.test_request_context(headers=h):
         assert request.headers["Host"] == "http://www.supremenewyork.com"
-   return render_template('main.html')
+    return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
 
 @app.route("/", methods=['GET'])
 def main():
@@ -102,3 +102,4 @@ def used():
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', headers={"Host":"www.supremenewyork.com"}, debug=True)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
+
