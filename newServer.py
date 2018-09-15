@@ -44,6 +44,7 @@ h = {
 }
 
 with app.test_request_context(headers=h):
+   print(request.headers)
    assert request.path == '/'
 
 def tokenremoval(token):
