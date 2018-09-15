@@ -44,7 +44,7 @@ h = {
 }
 
 with app.test_request_context(headers=h):
-   assert flask.request.path == '/'
+   assert Flask.request.path == '/'
 
 def tokenremoval(token):
     tokens['tokens'].append(token)
