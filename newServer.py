@@ -66,7 +66,7 @@ def now():
         #return request.headers.get('host')
         return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
 
-@before_request
+
 @app.route("/", methods=['GET'])
 def main():
     print(request.headers)
