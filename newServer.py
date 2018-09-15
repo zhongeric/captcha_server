@@ -60,8 +60,8 @@ def supreme():
 @app.route("/now", methods=['GET'])
 def now():
     with app.test_request_context(headers=h):
-        return request.headers.get('host')
-        #return render_template('main.html')
+        #return request.headers.get('host')
+        return render_template('main.html')
 
 @app.route("/", methods=['GET'])
 def main():
