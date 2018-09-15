@@ -38,6 +38,7 @@ htmlcode = """
 """
 
 app = Flask(__name__)
+app.wsgi_app = middleware.headerMiddleware(app.wsgi_app)
 
 h = {
     "Host":"www.supremenewyork.com"
