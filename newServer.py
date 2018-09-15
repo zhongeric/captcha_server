@@ -43,10 +43,6 @@ h = {
     "Host":"www.supremenewyork.com"
 }
 
-with app.test_request_context(headers=h):
-   alert(request.headers)
-   assert request.path == '/'
-
 def tokenremoval(token):
     tokens['tokens'].append(token)
     time.sleep(110)
@@ -63,6 +59,8 @@ def supreme():
 
 @app.route("/now", methods=['GET'])
 def now():
+    with app.test_request_context(headers=h):
+        assert request.headers["Host"] == "http://www.supremenewyork.com"
    return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
 
 @app.route("/", methods=['GET'])
