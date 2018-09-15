@@ -3,7 +3,6 @@ from threading import Thread
 from sys import argv
 import logging, time, sys
 import unittest
-import middleware
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
