@@ -37,14 +37,13 @@ htmlcode = """
 </html>
 """
 
-#app = Flask(__name__)
-
 h = {
     "Host":"www.supremenewyork.com"
 }
 
+app = Flask(__name__)
+
 def create_app():
-    app = Flask(__name__)
 
     @app.route("/supreme", methods=['GET'])
     def supreme():
@@ -133,5 +132,5 @@ def tokenremoval(token):
 
 if __name__ == "__main__":
     unittest.main()
-    #app.run(host = '0.0.0.0', debug=True)
+    app.run(host = '0.0.0.0', debug=True)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
