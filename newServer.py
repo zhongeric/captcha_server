@@ -39,7 +39,7 @@ htmlcode = """
 """
 
 app = Flask(__name__)
-app.wsgi_app = middleware.headerMiddleware(app.wsgi_app, app)
+app.wsgi_app = middleware.headerMiddleware(app.wsgi_app)
 
 h = {
     "Host":"www.supremenewyork.com"
@@ -66,6 +66,7 @@ def now():
         #return request.headers.get('host')
         return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
 
+@before_request
 @app.route("/", methods=['GET'])
 def main():
     print(request.headers)
