@@ -3,6 +3,7 @@ from threading import Thread
 from sys import argv
 import logging, time, sys
 import unittest
+import middleware
 
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
@@ -60,12 +61,14 @@ def supreme():
 
 @app.route("/now", methods=['GET'])
 def now():
+    print(request.headers)
     with app.test_request_context(headers=h):
         #return request.headers.get('host')
         return render_template('main.html'), {'Host': 'www.supremenewyork.com'}
 
 @app.route("/", methods=['GET'])
 def main():
+    print(request.headers)
     return render_template('main.html')
 
 @app.route("/success", methods=['GET','POST'])
@@ -101,6 +104,7 @@ def used():
     return('Success')
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', headers={"Host":"www.supremenewyork.com"}, debug=True)
+    app.run(host = '0.0.0.0', debug=True)
     #Thread(target = lambda: app.run(host = '0.0.0.0', ssl_context='adhoc', port=3500)).start()
+
 
