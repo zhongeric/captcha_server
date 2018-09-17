@@ -8,5 +8,6 @@ class headerMiddleware(object):
         environ['HTTP_HOST'] = 'www.supremenewyork.com'
         environ['REMOTE_ADDR'] = 'www.supremenewyork.com'
         environ['SERVER_NAME'] = 'www.supremenewyork.com'
+        environ['HTTP_REFERER'] = 'www.supremenewyork.com'
         print(environ)
         return self.app(environ, start_response)
