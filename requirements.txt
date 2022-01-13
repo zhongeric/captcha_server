@@ -53,7 +53,7 @@ numpy==1.14.5
 oauthlib==2.1.0
 pandas==0.23.0
 parmap==1.5.1
-Pillow==5.2.0
+Pillow==9.0.0
 populartimes==2.0
 protobuf==3.6.0
 psutil==5.4.6
