@@ -55,7 +55,7 @@ pandas==0.23.0
 parmap==1.5.1
 Pillow==5.2.0
 populartimes==2.0
-protobuf==3.6.0
+protobuf==3.18.3
 psutil==5.4.6
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
