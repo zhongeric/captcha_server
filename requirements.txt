@@ -39,7 +39,7 @@ idna==2.7
 imutils==0.4.6
 itsdangerous==0.24
 Jinja2==2.10
-joblib==0.12.1
+joblib==1.2.0
 Keras==2.1.6
 kiwisolver==1.0.1
 lxml==4.2.1
